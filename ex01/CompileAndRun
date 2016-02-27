@@ -1,0 +1,6 @@
+#!/bin/bash
+
+javac -d bin src/javase01/t01/main/*.java
+cd bin
+java -cp . javase01.t01.main.Main
+
