@@ -9,8 +9,13 @@ public enum Discipline
 
 
 
-    private ArrayList<Integer> integerValues;
-    private ArrayList<Float> floatValues;
+    private  ArrayList<Integer> integerValues;
+    private  ArrayList<Float> floatValues;
+    Discipline(){
+        floatValues=new ArrayList<>();
+        integerValues=new ArrayList<>();
+    }
+    //Как дисциплина должна определять, вещественные или целые значения должны в ней быть?
 
     public void setIntValue(int intValue){
         integerValues.add(intValue);
