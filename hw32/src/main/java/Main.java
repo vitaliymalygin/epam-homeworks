@@ -1,5 +1,6 @@
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 /**
  * Created by vitaliy on 20.03.16.
@@ -11,11 +12,11 @@ public class Main {
     public static void main(String[] args) {
         ResourceBundle bundle;
         Main main=new Main();
-
+        Scanner scanner=new Scanner(System.in);
         System.out.println("Please choose language of program" +
                 "Press 1 to choose RU or press 2 to choose EN");
         ScanToken scanToken=new ScanToken();
-        String chooseLang=scanToken.scanConsole();
+        String chooseLang=scanToken.scanConsole(scanner);
         String chooseQuest;
         switch (chooseLang){
                 case "1":
@@ -29,7 +30,7 @@ public class Main {
 
                     bundle=ResourceBundle.getBundle("answers", main.ruLocale);
 
-                    chooseQuest=scanToken.scanConsole();
+                    chooseQuest=scanToken.scanConsole(scanner);
                     System.out.println(bundle.getString(chooseQuest));
                     break;
 
@@ -44,11 +45,12 @@ public class Main {
 
                     bundle=ResourceBundle.getBundle("answers", main.engLocale);
 
-                    chooseQuest=scanToken.scanConsole();
+                    chooseQuest=scanToken.scanConsole(scanner);
                     System.out.println(bundle.getString(chooseQuest));
                     break;
 
             }
+        scanner.close();
 
 
     }
